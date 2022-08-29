@@ -44,4 +44,15 @@ Route::controller(App\Http\Controllers\Admin\ProductController::class)->group(fu
     Route::get('/product-image/{product_image_id}/delete','destroyImage');
     });
 
+// Colour
+
+Route::controller(App\Http\Controllers\Admin\ColourController::class)->group(function () {
+    Route::get('/colours', 'index');
+    Route::get('/colours/create', 'create');
+    Route::post('/colours/create', 'store');
+    Route::get('/colours/{colour}/edit', 'edit');
+    Route::put('/colours/{colour_id}', 'update');
+    Route::get('/colours/{colour_id}/delete', 'destroy');
+    });
+
 });

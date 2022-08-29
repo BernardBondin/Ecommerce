@@ -36,6 +36,13 @@
     </li>
 
     <li class="nav-item">
+      <a class="nav-link" href="{{ url('admin/colours') }}">
+        <i class="mdi mdi-palette menu-icon"></i>
+        <span class="menu-title">Colours</span>
+      </a>
+    </li>
+
+    <li class="nav-item">
       <a class="nav-link" href="index.html">
         <i class="mdi mdi-home menu-icon"></i>
         <span class="menu-title">Dashboard</span>
