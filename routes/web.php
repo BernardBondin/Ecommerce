@@ -42,6 +42,10 @@ Route::controller(App\Http\Controllers\Admin\ProductController::class)->group(fu
     Route::put('/products/{product}', 'update');
     Route::get('/products/{product_id}/delete', 'destroy');
     Route::get('/product-image/{product_image_id}/delete','destroyImage');
+
+    Route::post('/product-colour/{prod_colour_id}', 'updateProdColourQty');
+    Route::get('/product-colour/{prod_colour_id}/delete', 'deleteProdColour');
+    
     });
 
 // Colour

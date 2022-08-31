@@ -7,7 +7,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>{{ config('app.name', 'Ecommerce') }}</title>
 
     <!-- plugins:css -->
     <link rel="stylesheet" href="{{ asset('admin/vendors/mdi/css/materialdesignicons.min.css') }}">
@@ -58,6 +58,8 @@
     <script src="{{ asset('admin/js/data-table.js') }}"></script>
     <script src="{{ asset('admin/js/jquery.dataTables.js') }}"></script>
     <script src="{{ asset('admin/js/dataTables.bootstrap4.js') }}"></script>
+
+    @yield('scripts')
 
     @livewireScripts
     @stack('script')
