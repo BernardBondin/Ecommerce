@@ -42,6 +42,21 @@ Route::controller(App\Http\Controllers\Admin\ProductController::class)->group(fu
     Route::put('/products/{product}', 'update');
     Route::get('/products/{product_id}/delete', 'destroy');
     Route::get('/product-image/{product_image_id}/delete','destroyImage');
+
+    Route::post('/product-colour/{prod_colour_id}', 'updateProdColourQty');
+    Route::get('/product-colour/{prod_colour_id}/delete', 'deleteProdColour');
+    
+    });
+
+// Colour
+
+Route::controller(App\Http\Controllers\Admin\ColourController::class)->group(function () {
+    Route::get('/colours', 'index');
+    Route::get('/colours/create', 'create');
+    Route::post('/colours/create', 'store');
+    Route::get('/colours/{colour}/edit', 'edit');
+    Route::put('/colours/{colour_id}', 'update');
+    Route::get('/colours/{colour_id}/delete', 'destroy');
     });
 
 });
