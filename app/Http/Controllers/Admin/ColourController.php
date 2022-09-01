@@ -22,7 +22,7 @@ class ColourController extends Controller
         $validatedData = $request->validated();
         $validatedData['status'] = $request->status == true ? '1':'0';
         Colour::create($validatedData);
-        return redirect('admin/colours')->with('message', 'Colour Added Successfully!');
+        return redirect('admin/colours/')->with('message', 'Colour Added Successfully!');
     }
 
     public function edit(Colour $colour) {

@@ -71,12 +71,11 @@ class ProductController extends Controller
                 $product->productColours()->create([
                     'product_id' => $product->id,
                     'colour_id' => $colour,
-                    'quantity' => $request->quantity[$key] ?? 0
+                    'quantity' => $request->colorQuantity[$key] ?? 0
                 ]);
             }
         }
         return redirect('/admin/products')->with('message', 'Product Added Succesfully!');
-        
     }
 
     public function edit(int $product_id) {
@@ -93,6 +92,7 @@ class ProductController extends Controller
     public function update(ProductFormRequest $request, int $product_id) {
         $validatedData = $request->validated();
         $product = Category::findOrFail($validatedData['category_id'])->products()->where('id', $product_id)->first();
+
         if($product) {
             $product->update([
             'category_id' => $validatedData['category_id'],

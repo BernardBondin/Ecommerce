@@ -147,12 +147,13 @@
 
                                 <label>Select Colour:</label>
                                 <div class="row">
+
                                     @forelse ($colours as $colourItem)
                                     <div class="col-md-3">
                                         <div class="p-2 border mb-3">
                                         Colour: <input type="checkbox" name="colours[{{ $colourItem->id }}]" value="{{ $colourItem->id }}"> {{ $colourItem->name }}
                                         <br>
-                                        Quantity: <input type="number" name="colourQuantity[{{ $colourItem->id }}]" style="width:70px; border:1px solid;">
+                                        Quantity: <input type="number" name="colourQuantity[{{ $colourItem->id }}]" style="width:70px; border:1px solid">
                                         </div>
                                     </div>
                                     @empty
@@ -160,6 +161,7 @@
                                         <h1>Colour Not Found!</h1>
                                     </div>
                                     @endforelse
+
                                 </div>
                             </div>
                         </div>

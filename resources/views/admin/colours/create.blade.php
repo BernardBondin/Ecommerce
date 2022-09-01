@@ -17,7 +17,8 @@
             </div>
 
             <div class="card-body">
-                <form action="{{ url('admin/colours/create') }}" method="POST">
+
+                <form action="{{ url('admin/colours/create/') }}" method="POST">
                     @csrf
 
                     <div class="mb-3">
@@ -39,6 +40,7 @@
                         <button type="submit" class="btn btn-success float-end">Save</button>
                     </div>
                 </form>
+                
             </div>
         </div>
     </div>

@@ -12,7 +12,7 @@
         <div class="card">
             <div class="card-header">
                 <h3>Colours List
-                    <a href="{{ url('admin/colours/create') }}" class="btn btn-primary btn-sm text-black float-end">Add Colours</a>
+                    <a href="{{ url('admin/colours/create/') }}" class="btn btn-primary btn-sm text-black float-end">Add Colours</a>
                 </h3>
             </div>
 

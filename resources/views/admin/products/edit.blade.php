@@ -170,20 +170,21 @@
 
                         <div class="tab-pane fade border p-3" id="colours-tab-pane" role="tabpanel" tabindex="0">
                             <div class="mb-3">
-                                <h4>Add Product Colours</h4>
-                                <label>Select Colour:</label>
+                                {{-- <h4>Add Product Colours</h4> --}}
+                                <label class="fw-bold">Select Colour:</label>
                                 <div class="row">
                                     @forelse ($colours as $colourItem)
                                     <div class="col-md-3">
-                                        <div class="p-2 border mb-3">
-                                        Colour: <input type="checkbox" name="colours[{{ $colourItem->id }}]" value="{{ $colourItem->id }}"> {{ $colourItem->name }}
+                                        <div class="p-2 bg-info border bg-opacity-10 border-dark my-3 ">
+                                        Colour: <input type="checkbox" name="colours[{{ $colourItem->id }}]" value="{{ $colourItem->id }}">
+                                        {{ $colourItem->name }}
                                         <br>
                                         Quantity: <input type="number" name="colourQuantity[{{ $colourItem->id }}]" style="width:70px; border:1px solid;">
                                         </div>
                                     </div>
                                     @empty
-                                    <div class="col-md-12">
-                                        <h1>Colour Not Found!</h1>
+                                    <div class="col-md-3">
+                                        <h4 class="mt-3">Colour/s Not Found!</h4>
                                     </div>
                                     @endforelse
                                 </div>
@@ -250,10 +251,10 @@
     $(document).ready(function() {
 
         $.ajaxSetup({
-    headers: {
-        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-        }
-    });
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
 
         $(document).on('click', '.updateProductColourBtn', function () {
             var product_id = "{{ $product->id }}";
@@ -281,7 +282,8 @@
             })
 
         });
-            $(document).on('click', '.deleteProductColourBtn', function () {
+            
+        $(document).on('click', '.deleteProductColourBtn', function () {
                 var prod_colour_id = $(this).val();
                 var thisClick = $(this);
 

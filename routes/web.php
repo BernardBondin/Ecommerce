@@ -28,10 +28,6 @@ Route::controller(App\Http\Controllers\Admin\CategoryController::class)->group(f
 
     Route::get('/brands', App\Http\Livewire\Admin\Brand\Index::class);
 
-    // Route::controller(App\Http\Controllers\Admin\BrandController::class)->group(function () {
-    //     Route::get('/brands', 'index');
-    // });
-
 // Product Routes
 
 Route::controller(App\Http\Controllers\Admin\ProductController::class)->group(function () {
@@ -42,13 +38,12 @@ Route::controller(App\Http\Controllers\Admin\ProductController::class)->group(fu
     Route::put('/products/{product}', 'update');
     Route::get('/products/{product_id}/delete', 'destroy');
     Route::get('/product-image/{product_image_id}/delete','destroyImage');
-
+    
     Route::post('/product-colour/{prod_colour_id}', 'updateProdColourQty');
     Route::get('/product-colour/{prod_colour_id}/delete', 'deleteProdColour');
-    
     });
 
-// Colour
+// Colour Routes
 
 Route::controller(App\Http\Controllers\Admin\ColourController::class)->group(function () {
     Route::get('/colours', 'index');
@@ -58,5 +53,5 @@ Route::controller(App\Http\Controllers\Admin\ColourController::class)->group(fun
     Route::put('/colours/{colour_id}', 'update');
     Route::get('/colours/{colour_id}/delete', 'destroy');
     });
-
+    
 });

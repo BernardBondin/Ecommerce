@@ -12,7 +12,7 @@
         <div class="card">
             <div class="card-header">
                 <h3>Edit Colours
-                    <a href="{{ url('admin/colours') }}" class="btn btn-danger btn-sm text-black float-end">BACK</a>
+                    <a href="{{ url('admin/colours/') }}" class="btn btn-danger btn-sm text-black float-end">BACK</a>
                 </h3>
             </div>
 
